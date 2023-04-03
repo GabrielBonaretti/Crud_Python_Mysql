@@ -1,8 +1,25 @@
 import os
 import sys
 import inquirer
+from netflix import Cliente
 
 sys.path.append(os.path.realpath("."))
+
+
+
+def menu_filmes():
+    
+    questions = [
+        inquirer.List(
+            "escolha",
+            message="Você deseja: ",
+            choices=[],
+        ),
+    ]
+
+    answers = inquirer.prompt(questions)
+
+    return answers.get("escolha")
 
 
 def menu_inicial():
@@ -16,7 +33,7 @@ def menu_inicial():
 
     answers = inquirer.prompt(questions)
 
-    return answers.values()
+    return answers.get("escolha")
 
 
 def menu_user():
@@ -30,7 +47,7 @@ def menu_user():
 
     answers = inquirer.prompt(questions)
 
-    return answers.values()
+    return answers.get("escolha")
 
 
 def menu_admin():
@@ -44,7 +61,7 @@ def menu_admin():
 
     answers = inquirer.prompt(questions)
 
-    return answers.values()
+    return answers.get("escolha")
 
 
 def logar_usuario():
@@ -55,7 +72,7 @@ def logar_usuario():
 
     answers = inquirer.prompt(questions)
 
-    return answers.values()
+    return answers.get("email"), answers.get("senha")
 
 
 def cadastrar_usuario():
@@ -63,13 +80,13 @@ def cadastrar_usuario():
         inquirer.Text("nome", message="Nome: "),
         inquirer.Text("senha", message="Senha: "),
         inquirer.Text("email", message="E-mail: "),
-        inquirer.Text("plano", message="Plano(basico/medio/premium): ".islower()),
-        inquirer.Text("tipo", message="Tipo(user/admin): ".islower()),
+        inquirer.Text("plano", message="Plano(basico/medio/premium): "),
+        inquirer.Text("tipo", message="Tipo(user/admin): "),
     ]
 
     answers = inquirer.prompt(questions)
 
-    return answers.values()
+    return answers.get("nome"), answers.get("senha"), answers.get("email"), answers.get("plano"), answers.get("tipo")
 
 
 def cadastrar_filmes():
@@ -82,3 +99,4 @@ def cadastrar_filmes():
     answers = inquirer.prompt(questions)
 
     return answers.values()
+
