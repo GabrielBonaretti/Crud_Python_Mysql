@@ -1,6 +1,7 @@
 class Cliente:
-    def __init__(self, nome='', email='', plano='basico', tipo="user"):
+    def __init__(self, nome='', senha='', email='', plano='basico', tipo="user"):
         self.nome = nome
+        self.senha = senha
         self.email = email
 
         self.tipos = ["user", "admin"]

@@ -1,10 +1,7 @@
+from conecta import conecta
 import mysql.connector
 
-try:
-    conecta()
-except Exception as e:
-    print(f"Erro de conexão {e}")
-
+conexao = conecta()
 
 def listar_usuarios():
     cursor = conexao.cursor()
@@ -25,7 +22,6 @@ def listar_filmes():
     cursor = conexao.cursor()
     cursor.execute('select database()')
     linha = cursor.fetchone()
-    print(f'Banco => {linha[0]}\n')
 
     sql = "SELECT * from filmes"
     cursor.execute(sql)
