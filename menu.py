@@ -114,12 +114,40 @@ def filmes(lista_filmes):
     return answers.get("escolha")
 
 
+def modificar_dados_user():
+    questions = [
+        inquirer.List(
+            "escolha",
+            message="Você deseja: ",
+            choices=["nome", "senha", "email", "apagar conta"],
+        ),
+    ]
+
+    answers = inquirer.prompt(questions)
+
+    return answers.get("escolha")
+
+
 def modificar_dados_admin():
     questions = [
         inquirer.List(
             "escolha",
             message="Você deseja: ",
             choices=["nome", "senha", "email", "plano", "tipo", "apagar conta"],
+        ),
+    ]
+
+    answers = inquirer.prompt(questions)
+
+    return answers.get("escolha")
+
+
+def modificar_dados_filmes():
+    questions = [
+        inquirer.List(
+            "escolha",
+            message="Você deseja: ",
+            choices=["nome", "descricao", "genero", "plano", "apagar filme"],
         ),
     ]
 

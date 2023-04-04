@@ -3,51 +3,22 @@ from conecta import close
 import menu as mn
 
 
-def update_nome_usuario(nome, senha):
+def update_usuario(sett, set_value, where, where_value):
     conexao, cursor = conecta()
 
-    comando = 'UPDATE usuarios SET nome = "{}" WHERE senha = "{}"'.format(nome, senha)
+    comando = 'UPDATE usuarios SET {} = "{}" WHERE nome = "{}"'.format(sett, set_value, where, where_value)
     cursor.execute(comando)
     conexao.commit()  # edita o banco de dados (create, update, delete)
 
     close(conexao=conexao, cursor=cursor) 
 
 
-def update_senha_usuario(senha, nome):
+def update_filmes(sett, set_value, where, where_value):
     conexao, cursor = conecta()
 
-    comando = 'UPDATE usuarios SET senha = "{}" WHERE nome = "{}"'.format(senha, nome)
+    comando = 'UPDATE filmes SET {} = "{}" WHERE nome = "{}"'.format(sett, set_value, where, where_value)
     cursor.execute(comando)
     conexao.commit()  # edita o banco de dados (create, update, delete)
 
     close(conexao=conexao, cursor=cursor) 
 
-
-def update_email_usuario(email, nome):
-    conexao, cursor = conecta()
-
-    comando = 'UPDATE usuarios SET email = "{}" WHERE nome = "{}"'.format(email, nome)
-    cursor.execute(comando)
-    conexao.commit()  # edita o banco de dados (create, update, delete)
-
-    close(conexao=conexao, cursor=cursor) 
-
-
-def update_plano_usuario(plano, nome):
-    conexao, cursor = conecta()
-
-    comando = 'UPDATE usuarios SET plano = "{}" WHERE nome = "{}"'.format(plano, nome)
-    cursor.execute(comando)
-    conexao.commit()  # edita o banco de dados (create, update, delete)
-
-    close(conexao=conexao, cursor=cursor)   
-
-
-def update_tipo_usuario(tipo, nome):
-    conexao, cursor = conecta()
-
-    comando = 'UPDATE usuarios SET tipo = "{}" WHERE nome = "{}"'.format(tipo, nome)
-    cursor.execute(comando)
-    conexao.commit()  # edita o banco de dados (create, update, delete)
-
-    close(conexao=conexao, cursor=cursor)   
