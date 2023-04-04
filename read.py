@@ -18,6 +18,6 @@ def listar_filmes():
     cursor.execute(comando)
     resultado = cursor.fetchall()  # ler o banco de dados (read)  # retorna uma lista
     
-    close(conexao=conexao, cursor=cursor)    
+    close(conexao=conexao, cursor=cursor)
     return resultado
 

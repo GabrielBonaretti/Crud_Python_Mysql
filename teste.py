@@ -1,47 +1,26 @@
-import mysql.connector
+def soma(numero1, numero2):
+    soma=numero1+numero2
+    return soma
 
-conexao = mysql.connector.connect(
-    host='localhost',
-    database='bdyoutube',
-    user='root',
-    password=''
-)
+resultado_soma = soma(numero1=10, numero2=20)
+print(resultado_soma)
 
-cursor = conexao.cursor()
-
-# crud
+resultado_soma = soma(numero1=1000, numero2=100)
+print(resultado_soma)
 
 
-# =-=-=Crud=-=-=
-# =-=-=Create=-=-=
-# nome_produto = "chocolate"
-# valor = 15
-# comando = 'INSERT INTO vendas (nome_produto, valor) VALUES ("{}", {})'.format(nome_produto, valor)
-# cursor.execute(comando)
-# conexao.commit()  # edita o banco de dados (create, update, delete)
+teste_lista = ["gabriel", "teste"]
+teste_lista.append("oi")
+print(teste_lista)
 
-# =-=-=cRud=-=-=
-# =-=-=Read=-=-=
-# comando = 'SELECT * FROM vendas'
-# cursor.execute(comando)
-# resultado = cursor.fetchall()  # ler o banco de dados (read)  # retorna uma lista
-# print(resultado)
+print(teste_lista[0])
+teste_matriz = [["gabriel", "teste"], 
+                ["a", "b"]]
 
-# =-=-=crUd=-=-=
-# =-=-=Update=-=-=
-# nome_produto = "todynho"
-# valor = 6
-# comando = 'UPDATE vendas SET valor = {} WHERE nome_produto = "{}"'.format(valor, nome_produto)
-# cursor.execute(comando)
-# conexao.commit()  # edita o banco de dados (create, update, delete)
+for i in range(len(teste_lista)):
+    if teste_lista[i] == "teste":
+        print("achou")
+    else:
+        pass
 
-
-# =-=-=cruD=-=-=
-# =-=-=Delete=-=-=
-# nome_produto = "todinho"
-# comando = 'DELETE FROM vendas WHERE nome_produto = "{}"'.format(nome_produto)
-# cursor.execute(comando)
-# conexao.commit()  # edita o banco de dados (create, update, delete)
-
-cursor.close()
-conexao.close()
+print(teste_matriz[1][0])

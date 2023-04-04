@@ -53,7 +53,7 @@ def menu_admin():
         inquirer.List(
             "escolha",
             message="Você deseja: ",
-            choices=["Ver filmes", "Modificar dados", "Adicionar Filmes", "Modificar Filmes", "Ver usuários", "Sair"],
+            choices=["Ver filmes", "Modificar dados", "Adicionar Filmes", "Modificar Filmes", "Sair"],
         ),
     ]
 
@@ -63,6 +63,7 @@ def menu_admin():
 
 
 def logar_usuario():
+    
     questions = [
         inquirer.Text("email", message="E-mail"),
         inquirer.Text("senha", message="Senha"),
@@ -114,12 +115,40 @@ def filmes(lista_filmes):
     return answers.get("escolha")
 
 
+def modificar_dados_user():
+    questions = [
+        inquirer.List(
+            "escolha",
+            message="Você deseja: ",
+            choices=["nome", "senha", "email", "apagar conta"],
+        ),
+    ]
+
+    answers = inquirer.prompt(questions)
+
+    return answers.get("escolha")
+
+
 def modificar_dados_admin():
     questions = [
         inquirer.List(
             "escolha",
             message="Você deseja: ",
             choices=["nome", "senha", "email", "plano", "tipo", "apagar conta"],
+        ),
+    ]
+
+    answers = inquirer.prompt(questions)
+
+    return answers.get("escolha")
+
+
+def modificar_dados_filmes():
+    questions = [
+        inquirer.List(
+            "escolha",
+            message="Você deseja: ",
+            choices=["nome", "descricao", "genero", "plano", "apagar filme"],
         ),
     ]
 
