@@ -5,16 +5,14 @@ class Cliente:  # comparar filme/usuario no banco
         self.nome = nome
         self.senha = senha
         self.email = email
-
         self.tipo = ["user", "admin"]
-        if tipo in self.tipos:
+        if tipo in self.tipo:
             self.tipo = tipo
         else:
             print("Tipo inválido")
             self.tipo = ''
-
         self.plano = ["basico", "medio", "premium"]
-        if plano in self.planos:
+        if plano in self.plano:
             self.plano = plano
         else:
             print("Plano inválido")
@@ -22,9 +20,13 @@ class Cliente:  # comparar filme/usuario no banco
 
     def verificar_usuario(email, senha):
         resultado = listar_usuarios()
-        for i in resultado:
-            if email == resultado[i][2] and senha == resultado[i][1]:
-                conta = Cliente(resultado[1], resultado[2], resultado[3], resultado[4], resultado[5])
+        for i in range(len(resultado)):
+            if email == resultado[i][3] and senha == resultado[i][2]:
+                conta = Cliente(resultado[i][1], resultado[i][2], resultado[i][3], resultado[i][4], resultado[i][5])
                 return conta
-            else:
-                print("Algo está errado")
+            
+    def verificar_filme(plano_filme, plano_usuario):
+        if plano_filme == "basico" and plano_usuario == "basico" or plano_filme == "basico" and plano_usuario == "medio" or plano_filme == "basico" and plano_usuario == "premuim" or plano_filme == "medio" and plano_usuario == "medio" or plano_filme == "medio" and plano_usuario == "premium" or plano_filme == "premium" and plano_usuario == "premium":
+            print("pode")
+        else:
+            print("nao pode")
