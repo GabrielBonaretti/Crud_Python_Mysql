@@ -11,7 +11,6 @@ cursor = conexao.cursor()
 
 # crud
 
-
 # =-=-=Crud=-=-=
 # =-=-=Create=-=-=
 # nome_produto = "chocolate"
@@ -34,7 +33,6 @@ cursor = conexao.cursor()
 # comando = 'UPDATE vendas SET valor = {} WHERE nome_produto = "{}"'.format(valor, nome_produto)
 # cursor.execute(comando)
 # conexao.commit()  # edita o banco de dados (create, update, delete)
-
 
 # =-=-=cruD=-=-=
 # =-=-=Delete=-=-=
